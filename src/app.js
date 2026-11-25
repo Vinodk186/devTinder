@@ -2,12 +2,17 @@ const express = require("express");
 
 const app = express();
 
-app.use("/", (req, res)=>{
-    res.send("Dev tinder dashboard in started")
+app.get("/user", (req, res)=>{
+    res.send({firstName:"Vinod", lastName:"Kumar"})
 })
 
-app.use("/hello", (req, res)=>{
-    res.send("Hello hello hello hello hellllloooo......")
+app.post("/user", (req,res)=>{
+    //saving data to the DB
+    res.send("Data successfully saved to the data base")
+})
+
+app.delete("/user", (req,res)=>{
+    res.send("Deleted successfully")
 })
 
 app.use("/test", (req, res)=>{
